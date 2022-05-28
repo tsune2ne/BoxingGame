@@ -15,8 +15,10 @@ public class Battler : MonoBehaviour
     public bool IsDamaging { get; private set; } = false;
     public bool IsGuard { get; private set; } = false;
 
-    public void Damage(Battler attacker, int damage)
+    void Damage(Battler attacker, int damage, bool canGuard)
     {
+        if (IsDamaging || IsDead || (canGuard && IsGuard)) return;
+
         IsGuard = false;
         IsDamaging = true;
         Hp = Mathf.Max(0, Hp - damage);
@@ -36,12 +38,12 @@ public class Battler : MonoBehaviour
 
     public void Attack1()
     {
-        if (IsAttacking || IsDead || IsDamaging) return;
+        if (IsAttacking || IsDead || IsDamaging || IsGuard) return;
 
         IsAttacking = true;
         battlerAnimatorController.StartAttack1(() =>
         {
-            targetBattler.Damage(this, 1);
+            targetBattler.Damage(this, 1, true);
         }, () =>
         {
             IsAttacking = false;
@@ -50,12 +52,12 @@ public class Battler : MonoBehaviour
 
     public void Attack2()
     {
-        if (IsAttacking || IsDamaging) return;
+        if (IsAttacking || IsDead || IsDamaging || IsGuard) return;
 
         IsAttacking = true;
         battlerAnimatorController.StartAttack2(() =>
         {
-            targetBattler.Damage(this, 2);
+            targetBattler.Damage(this, 2, false);
         }, () =>
         {
             IsAttacking = false;
@@ -64,7 +66,7 @@ public class Battler : MonoBehaviour
 
     public void StartGuard()
     {
-        if (IsAttacking || IsDead || IsDamaging) return;
+        if (IsAttacking || IsDead || IsDamaging || IsGuard) return;
 
         IsGuard = true;
         battlerAnimatorController.StartGuard();

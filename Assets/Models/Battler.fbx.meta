@@ -106,21 +106,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.41403508
-        functionName: OnHitted
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 95673d453a1f14045b3d60138128493e, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.88421047
-        functionName: OnFinished
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 95673d453a1f14045b3d60138128493e, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -149,21 +135,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.5964913
-        functionName: OnHitted
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 95673d453a1f14045b3d60138128493e, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.89824563
-        functionName: OnFinished
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 95673d453a1f14045b3d60138128493e, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -250,14 +222,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.6947369
-        functionName: OnStarted
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 95673d453a1f14045b3d60138128493e, type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

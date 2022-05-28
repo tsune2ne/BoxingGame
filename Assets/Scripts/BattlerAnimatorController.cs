@@ -5,7 +5,6 @@ using UnityEngine;
 public class BattlerAnimatorController : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    Action onHitted, onFinshed;
 
     public void StartAttack1(Action onHitted, Action onFinished)
     {
@@ -40,16 +39,6 @@ public class BattlerAnimatorController : MonoBehaviour
     public void StartDead()
     {
         animator.SetTrigger("DeadTrigger");
-    }
-
-    public void OnHitted()
-    {
-        onHitted?.Invoke();
-    }
-
-    public void OnFinished()
-    {
-        onFinshed?.Invoke();
     }
 
     async void DelayAction(int waitMiliSeconds, Action onFinished)
