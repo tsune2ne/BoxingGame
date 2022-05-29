@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Battler : MonoBehaviour
@@ -5,6 +6,7 @@ public class Battler : MonoBehaviour
     [SerializeField] Battler targetBattler;
     [SerializeField] BattlerAnimatorController battlerAnimatorController;
     [SerializeField] HpGuage hpGuage;
+    [SerializeField] Variables variables;
 
     const int MaxHp = 10;
     public int Hp { get; private set; } = MaxHp;
@@ -33,6 +35,19 @@ public class Battler : MonoBehaviour
         else
         {
             battlerAnimatorController.StartDead();
+        }
+        SetVariable("ResetState", true);
+    }
+
+    void SetVariable(string key, object value)
+    {
+        if (!variables) return;
+        foreach (var v in variables.declarations)
+        {
+            if (v.name == key)
+            {
+                v.value = value;
+            }
         }
     }
 
